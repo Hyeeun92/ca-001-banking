@@ -3,45 +3,71 @@ package com.company;
 // 21545 Hyeeun Lee
 // 21545@student.dorset-college.ie
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-class CreatingCustomer {
 
-    Scanner kb = new Scanner(System.in);
-    private String fName, lName, eMail, firstUpperName, lastUpperName, fullName, firstLowerName, lastLowerName;
+public class CreatingCustomer {
 
     public CreatingCustomer() {
 
+        Scanner sc = new Scanner(System.in);
         String sample = new String("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
-        System.out.println("Please input the customer's first name.");
-        fName = kb.next();
-        System.out.println("Please input the customer's last name.");
-        lName = kb.next();
-        System.out.println("Please input the customer's email.");
-        eMail = kb.next();
-        fullName = fName + lName;
-        firstUpperName = fName.toUpperCase();
-        lastUpperName = lName.toUpperCase();
-        firstLowerName = fName.toLowerCase();
-        String a = String.valueOf(firstLowerName.charAt(0));
-        lastLowerName = lName.toLowerCase();
-        String b = String.valueOf(lastLowerName.charAt(0));
-        String A = a+b;
-        String B = String.valueOf(fullName.length());
-        String C = String.valueOf((sample.indexOf(firstUpperName.charAt(0)))+1);
-        String D = String.valueOf((sample.indexOf(lastUpperName.charAt(0)))+1);
-        String newCustomerAccount = String.join("--",A,B,C,D);
-        String pinCode = String.join("",C,D);
-        System.out.println("Customer account - " + newCustomerAccount);
-        System.out.println("Pin code - " + pinCode);
+        System.out.print("Please input the customer's first name.\t");
+        String fName = sc.nextLine();
+        System.out.print("Please input the customer's last name.\t");
+        String lName = sc.nextLine();
+        System.out.print("Please input the customer's email.\t");
+        String eMail = sc.nextLine();
 
+        String fNameChange = fName.substring(0, 1).toUpperCase() + fName.substring(1).toLowerCase();
+        String lNameChange = lName.substring(0, 1).toUpperCase() + lName.substring(1).toLowerCase();
+
+        String firstCode = fName.substring(0, 1).toLowerCase() + lName.substring(0, 1).toLowerCase();
+        String secondCode = String.valueOf(fName.length() + lName.length());
+        String thirdCode = String.valueOf((sample.indexOf(fNameChange.charAt(0))) + 1);
+        String fourthCode = String.valueOf((sample.indexOf(lNameChange.charAt(0))) + 1);
+
+        String accountCode = String.join("--", firstCode, secondCode, thirdCode, fourthCode);
+        String pinNumber = String.join("", thirdCode, fourthCode);
+
+        System.out.printf("Customer's account number is : %s and pin number is : %s\n", accountCode, pinNumber);
+
+        System.out.print("Please input the customer's current account balance.\t");
+        String currentAccountBalance = sc.nextLine();
+        System.out.print("Please input the customer's saving account balance.\t");
+        String savingAccountBalance = sc.nextLine();
+
+
+        try{
+
+        }catch (Exception e){
+
+        }
 
         Employee employee = new Employee();
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -3,21 +3,23 @@ package com.company;
 // 21545 Hyeeun Lee
 // 21545@student.dorset-college.ie
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Employee {
 
-    int selectFunction;
     Scanner kb = new Scanner(System.in);
     int inputNumberFirst = 0;
 
     public Employee(){
         do {
-            System.out.println("Please choose one option : 1.Create customer | 2.Delete customer | 3.Create Transaction");
+            System.out.println("Please choose one option : 1.Creating customer | 2.Delete customer | 3.Create Transaction");
             inputNumberFirst = kb.nextInt();
 
             if (inputNumberFirst == 1) {
                 CreatingCustomer creatingCustomer = new CreatingCustomer();
+
             }
             if (inputNumberFirst == 2) {
 
