@@ -3,30 +3,49 @@ package com.company;
 // 21545 Hyeeun Lee
 // 21545@student.dorset-college.ie
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
 import java.util.Scanner;
 
 public class Employee {
 
-    Scanner kb = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     int inputNumberFirst = 0;
 
+
+
+
     public Employee(){
+
         do {
             System.out.println("Please choose one option : 1.Creating customer | 2.Delete customer | 3.Create Transaction");
-            inputNumberFirst = kb.nextInt();
+            inputNumberFirst = sc.nextInt();
 
             if (inputNumberFirst == 1) {
-                CreatingCustomer creatingCustomer = new CreatingCustomer();
+
+                CustomerInfo customerInfo = new CustomerInfo();
 
             }
-            if (inputNumberFirst == 2) {
+            else if (inputNumberFirst == 2) {
+
+                String firstName, lastName, inaccountCode, inpinNumber;
+                System.out.print("Please input the customer's first name\t");
+                firstName = sc.nextLine();
+                System.out.print("Please input the customer's last name\t");
+                lastName = sc.nextLine();
+                System.out.print("Please input the customer's account code (without '--')\t");
+                inaccountCode = sc.nextLine();
+                System.out.print("Please input the customer's first name\t");
+                inpinNumber = sc.nextLine();
+
+                DeleteAccount deleteAccount = new DeleteAccount(firstName, lastName, inaccountCode, inpinNumber);
 
             }
+            else if (inputNumberFirst  == 3){
+
+            }
+
 
         } while (inputNumberFirst < 1 && inputNumberFirst > 3);
-
 
     }
 

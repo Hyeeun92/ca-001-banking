@@ -4,11 +4,12 @@ package com.company;
 // 21545@student.dorset-college.ie
 
 import java.util.Scanner;
+import java.io.*;
 
 
-public class CreatingCustomer {
+public class CustomerInfo {
 
-    public CreatingCustomer() {
+    public CustomerInfo() {
 
         Scanner sc = new Scanner(System.in);
         String sample = new String("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
@@ -31,23 +32,29 @@ public class CreatingCustomer {
         String accountCode = String.join("--", firstCode, secondCode, thirdCode, fourthCode);
         String pinNumber = String.join("", thirdCode, fourthCode);
 
+
         System.out.printf("Customer's account number is : %s and pin number is : %s\n", accountCode, pinNumber);
 
-        System.out.print("Please input the customer's current account balance.\t");
-        String currentAccountBalance = sc.nextLine();
-        System.out.print("Please input the customer's saving account balance.\t");
-        String savingAccountBalance = sc.nextLine();
+        try {
 
+            FileWriter fw = new FileWriter("./customers.txt", true);
+            BufferedWriter customerList = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(customerList);
+            pw.print(accountCode+"\n");
+            pw.close();
 
-        try{
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
 
-        }catch (Exception e){
+        Employee e = new Employee();
 
         }
 
-        Employee employee = new Employee();
-    }
-}
+       }
+
+
 
 
 
