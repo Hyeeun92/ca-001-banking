@@ -3,13 +3,16 @@ package com.company;
 // 21545 Hyeeun Lee
 // 21545@student.dorset-college.ie
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
 
-
 public class CustomerInfo {
+    LocalDate localDate = LocalDate.now();
 
     public CustomerInfo() {
+
 
         Scanner sc = new Scanner(System.in);
         String sample = new String("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
@@ -32,16 +35,32 @@ public class CustomerInfo {
         String accountCode = String.join("--", firstCode, secondCode, thirdCode, fourthCode);
         String pinNumber = String.join("", thirdCode, fourthCode);
 
-
         System.out.printf("Customer's account number is : %s and pin number is : %s\n", accountCode, pinNumber);
+
+        System.out.print("Please input the customer's current account balance.\t");
+        String currentBalance = sc.next();
+        System.out.print("Please input the customer's saving account balance.\t");
+        String savingBalance = sc.next();
+
+
 
         try {
 
-            FileWriter fw = new FileWriter("./customers.txt", true);
+            FileWriter fw = new FileWriter("customers.txt", true);
             BufferedWriter customerList = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(customerList);
-            pw.print(accountCode+"\n");
+            pw.print(localDate + "," + fNameChange  + "," + lNameChange + "," + accountCode+ "," + pinNumber + "," + eMail + "," + currentBalance + "," + savingBalance + "\n");
             pw.close();
+
+            FileWriter saving = new FileWriter(accountCode + "-saving.txt");
+            BufferedWriter s = new BufferedWriter(saving);
+
+            s.close();
+
+            FileWriter current = new FileWriter(accountCode + ".current.txt");
+            BufferedWriter c = new BufferedWriter(current);
+
+            c.close();
 
         } catch (
                 IOException e) {

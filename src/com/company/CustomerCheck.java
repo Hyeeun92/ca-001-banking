@@ -26,10 +26,10 @@ public class CustomerCheck extends Account {
             System.out.print("Please input your pin number");
             pinNumber = sc.nextLine();
 
-        }
-        while ((firstName.equals(getfNameChange())) && (inaccountCode.equals(getAccountCode())) && pinNumber.equals(getPinNumber()));
+        } while (true);
 
-        Customer customer = new Customer();
+
+
     }
 
 }

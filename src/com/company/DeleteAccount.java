@@ -5,15 +5,12 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class DeleteAccount extends Account {
-
-    public ArrayList<Account> listOfInfo = new ArrayList<Account>();
-
-    public DeleteAccount(String fName, String lName, String accountCode, String pinNumber){
+public class DeleteAccount {
 
 
 
-    }
+
+
 
 
 }
