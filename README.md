@@ -29,7 +29,7 @@ And program also create (account code).current.txt and (accont code)-saving.txt 
 
 When employee ask to list of customer, the program will read from 'customer.txt' to console.
 
-![](Images/presentation3.png)
+![](Images/Presentation3.png)
 
 Employee can also delete account if they have only '0' balance in either current account and saving account.
 The file will be deleted and program make another txt file that without customers data which employee would delete, and delete old 'customer.txt' file and change file new file name to 'customer.txt' in Account class.
