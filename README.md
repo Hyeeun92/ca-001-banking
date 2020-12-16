@@ -9,13 +9,13 @@ As a bank employee can create the customer account - when the account created th
 As a customer can check transaction history of current account and saving account and make transaction either current account and saving account.
 All data will saved as txt file.
 ### UML class diagram
-![](Images/Banking Application UML.png)
+![](Images/BankingApplicationUML.png)
 
 Account class is abstract class will extends to CustomerCheck class and Transaction Class.
 This class is connect data to program that every function will work properly. 
 ### UML actor diagram
 
-![](Images/Banking Application actor UML.png)
+![](Images/BankingApplicationactorUML.png)
 
 ### How the program work - as employee
 
