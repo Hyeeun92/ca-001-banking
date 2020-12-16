@@ -50,7 +50,6 @@ public class LogIn {
             }
         }
         while (inputNumber < 1 && inputNumber > 2) ;
-        System.out.println("Exit");
         // finish do-while for menu
     }
 }

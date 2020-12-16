@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class BankCustomer {
 
-    public BankCustomer(String getFName, String getLName, String gAccountCode, String gPinNumber) throws IOException {
+    public BankCustomer(String gAccountCode) throws IOException {
         // declare variable for option
         int option = BankCustomer.customerMenu();
         // open do-while for option
@@ -29,7 +29,6 @@ public class BankCustomer {
                     break;
             }
         } while( option > 0 && option < 4);
-        System.out.println("Exit");
     }
     private static int customerMenu(){
         // initialize variable for option

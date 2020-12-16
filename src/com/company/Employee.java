@@ -77,7 +77,6 @@ public class Employee{
             }
         }
         while (inputNumberFirst < 1 && inputNumberFirst > 5);
-        System.out.println("Exit");
         // close do-while loop
     }
 }

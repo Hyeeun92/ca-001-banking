@@ -22,7 +22,6 @@ public class CustomerCheck extends Account{
         checkCustomer(getFName, getLName, gAccountCode, gPinNumber);
     }
 
-
     public static void checkCustomer(String getFName, String getLName, String gAccountCode, String gPinNumber) throws IOException{
         // declare variable for data from saved file
         String firstName = "";
@@ -56,7 +55,7 @@ public class CustomerCheck extends Account{
         }
         // open if to check if it is match
         if (firstName.equals(getFName) && lastName.equals(getLName) && accountCode.equals(gAccountCode) && pinNumber.equals(gPinNumber)){
-            BankCustomer bankCustomer = new BankCustomer(getFName, getLName, gAccountCode, gPinNumber);
+            BankCustomer bankCustomer = new BankCustomer(gAccountCode);
         } else{
             System.out.println("Please check one more");
         }
